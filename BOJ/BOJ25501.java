@@ -12,7 +12,7 @@ public class BOJ25501 {
         else if (s.charAt(l) != s.charAt(r)) return 0;
         else return recursion(s, l + 1, r - 1);
     }
-d
+
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
