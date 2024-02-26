@@ -4,7 +4,7 @@ import java.io.*;
 import java.util.*;
 
 public class BOJ9184 {
-    private static int[][][] arr = new int[101][101][101];
+    private static int[][][] arr = new int[21][21][21];
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -15,17 +15,17 @@ public class BOJ9184 {
             int a = parse(st.nextToken());
             int b = parse(st.nextToken());
             int c = parse(st.nextToken());
-            System.out.println("w(" + a + ", " + b + ", " + c + ") = " + w(a + 50, b + 50, c + 50));
+            System.out.println("w(" + a + ", " + b + ", " + c + ") = " + w(a, b, c));
         }
     }
 
     private static int w(int a, int b, int c) {
-        if (a <= 50 || b <= 50 || c <= 50) {
-            return arr[a][b][c] = 1;
+        if (a <= 0 || b <= 0 || c <= 0) {
+            return 1;
         }
 
-        if (a > 70 || b > 70 || c > 70) {
-            return arr[70][70][70] = w(70, 70, 70);
+        if (a > 20 || b > 20 || c > 20) {
+            return arr[20][20][20] = w(20, 20, 20);
         }
 
         if (arr[a][b][c] != 0) {
